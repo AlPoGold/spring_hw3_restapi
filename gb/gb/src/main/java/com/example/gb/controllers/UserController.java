@@ -25,4 +25,10 @@ public class UserController {
         service.progressRegistration(user.getName(), user.getAge(),user.getEmail());
         return "User added from body!";
     }
+
+    @PostMapping("/body?name={name}&age={age}&email={email}")
+    public String userAddFromParam(@PathVariable String name, @PathVariable int age, @PathVariable String email){
+
+        return "User added from url with params!";
+    }
 }
